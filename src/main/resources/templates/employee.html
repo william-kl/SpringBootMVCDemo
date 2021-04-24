@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"> <!-- loading dynamic page -->
+
+<table>
+	<tr th:each="employee:${employees}">  <!-- employees is key, to get value list -->
+		<td th:text = "${employee.id}"> ID</td>
+		<td th:text = "${employee.name}"> Name</td>
+		<td th:text = "${employee.email}"> Email</td>
+		<td th:text = "${employee.location}"> Location</td>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<td> <a th:href="@{/delete/{id}(id=${employee.id})}">Delete</a></td>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<td> <a th:href="@{/edit/{id}(id=${employee.id})}">Edit</a></td>
+	</tr>
+</table>
+</html>
